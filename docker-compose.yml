@@ -2,14 +2,15 @@ version: '3.1'
 services:
   mysql: 
     image: docker.io/mysql:5.7
+    restart: always
     secrets:
       - mypass
       - mydatabase
     environment:
-      MYSQL_DATABASE: 'mydatabase'
-      MYSQL_ROOT_PASSWORD: 'mypass'
+      MYSQL_ROOT_PASSWORD: "/run/secrets/mypass.txt"
+      MYSQL_DATABASE: "/run/secrets/mydatabase.txt"
 secrets:
    mypass:
-     file: ./mysql_password 
+     file: /run/secrets/mypass.txt
    mydatabase:
-     file: ./mysql_database
+     file: /run/secrets/mydatabase.txt
