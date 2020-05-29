@@ -1,6 +1,6 @@
-version: '3.3'
+version: '3.1'
 services:
-  db:
+  db: 
     image: mysql:5.7
     secrets:
       - mypass
@@ -11,6 +11,6 @@ services:
       MYSQL_ROOT_PASSWORD_FILE: '/run/secret/mypass'
 secrets:
    mypass:
-     file: ./mysql_password
+     file: ./mysql_password 
    mydatabase:
      file: ./mysql_database
