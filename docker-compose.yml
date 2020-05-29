@@ -6,11 +6,10 @@ services:
       - mypass
       - mydatabase
     environment:
-      MYSQL_DATABASE_FILE: 'mydatabase'
-      # Password for root access
-      MYSQL_ROOT_PASSWORD_FILE: 'mypass'
+      MYSQL_DATABASE: 'mydatabase'
+      MYSQL_ROOT_PASSWORD: 'mypass'
 secrets:
    mypass:
      file: ./mysql_password 
    mydatabase:
-     file: ./mysql_databas
+     file: ./mysql_database
