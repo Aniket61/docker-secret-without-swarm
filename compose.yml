@@ -12,5 +12,5 @@ services:
 secrets:
    mypass:
      file: ./mysql_password
-   mydatabase;
+   mydatabase:
      file: ./mysql_database
